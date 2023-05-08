@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <h1>404 - Pagina non trovata</h1>
+    <p>La pagina richiesta non è stata trovata. Controlla l'URL e riprova.</p>
+    <h3>pagine utili</h3>
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+        @if (ViewContext.HttpContext.Session.GetInt32("IsAuthenticated") == 1)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AdminArea">Admin Area</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Admin Login</a>
+            </li>
+
+        }
+
+    </ul>
+}

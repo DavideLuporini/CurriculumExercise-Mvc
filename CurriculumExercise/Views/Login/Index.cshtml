@@ -1,0 +1,21 @@
+﻿@model Utente
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        @Html.LabelFor(model=>model.UserName)
+        <div>
+            @Html.EditorFor(model => model.UserName)
+        </div>
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Password)
+        <div>
+            @Html.EditorFor(model => model.Password)
+        </div>
+    </div>
+    <input type="submit" value="Login" formaction="@Url.Action("Login" , "Login")" formmethod="post" />
+}
+
