@@ -19,9 +19,15 @@ namespace CurriculumExercise.Controllers
             return View(utente);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Skills()
         {
-            return View();
+            List<Skill> skills = Db.GetAllSkils();
+            return View(skills);
+        }
+        public IActionResult Works()
+        {
+            List<Lavoro> works = Db.GetAllWorks();
+            return View(works);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

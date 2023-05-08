@@ -1,0 +1,20 @@
+﻿@model List<Lavoro>
+
+<div class="container-fluid" id="skills">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="skills-text">
+                <h1 class="skills-title underline">SKILLS</h1>
+
+                @foreach (var item in Model)
+                {
+                    <dl class="skills-list">
+                        <dt >@item.Azienda</dt>
+                        <dt>da @item.DataInizio a @item.DataFine</dt>
+                        
+                    </dl>
+                }
+            </div>
+        </div>
+    </div>
+</div>
