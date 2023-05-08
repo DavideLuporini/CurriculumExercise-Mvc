@@ -31,15 +31,17 @@ namespace CurriculumExercise.Controllers
 
         [AuthorizationFilter]
         [HttpPost]
-        public IActionResult AddSkill(string nome , string skillValue)
+        public IActionResult AddSkill(string nome, string skillValue)
         {
-            Db.addSkill(nome , skillValue);
+            Db.addSkill(nome, skillValue);
             return View("AddSkill");
-        }        [AuthorizationFilter]
+        }
+
+        [AuthorizationFilter]
         [HttpPost]
-        public IActionResult AddWork(string azienda, DateTime dataInizio , DateTime dataFine)
+        public IActionResult AddWork(string azienda, DateTime dataInizio, DateTime dataFine)
         {
-            Db.AddWork(azienda , dataInizio , dataFine);
+            Db.AddWork(azienda, dataInizio, dataFine);
             return View("AddWork");
         }
     }
