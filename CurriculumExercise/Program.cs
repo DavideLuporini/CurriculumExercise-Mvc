@@ -46,6 +46,10 @@ namespace CurriculumExercise
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            app.MapControllerRoute(
+                name: "Login",
+                pattern: "{controller=Login}/{action=Login}/{showError}");
+
             app.Run();
         }
     }

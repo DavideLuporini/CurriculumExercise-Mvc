@@ -108,6 +108,9 @@
 </style>
 
 
+@if(Model != null)
+{
+    
 
 <div class="container-fluid" id="skills">
     <div class="row">
@@ -127,3 +130,8 @@
         </div>
     </div>
 </div>
+}
+else{
+    <h1>No skills registered</h1>
+    <p>Do you want to add a @ViewData["Title"]? click  <p>You already have an account? click here to <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Admin" asp-action="AddSkill">Here</a> </p></p>
+}

@@ -1,0 +1,29 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Subscribe";
+}
+<h1>@ViewData["Title"]</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="row justify-content-center align-items-center">
+        <div class="column-md-12 d-flex justify-content-center align-items-center flex-column">
+            <div>
+                @Html.LabelFor(model=>model.UserName)
+                <div>
+                    @Html.EditorFor(model => model.UserName)
+                </div>
+            </div>
+
+            <div>
+                @Html.LabelFor(model=>model.Password)
+                <div>
+                    @Html.EditorFor(model => model.Password ,new { htmlAttributes = new { type = "password" }})
+                </div>
+            </div>
+            <input type="submit" value="Login" formaction="@Url.Action("Subscription" , "Subscription")" formmethod="post" />
+            <div class="bg-danger">The username is already taken</div>
+            <p>You already have an account? click here to <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Login" asp-action="Login">LOG IN</a> </p>
+        </div>
+    </div>
+}

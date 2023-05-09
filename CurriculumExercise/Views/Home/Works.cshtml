@@ -3,21 +3,29 @@
     ViewData["Title"] = "Works";
 }
 
-<div class="container-fluid" id="skills">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="skills-text">
-                <h1 class="skills-title underline">@ViewData["Title"]</h1>
+@if (Model != null)
+{
+    <div class="container-fluid" id="skills">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="skills-text">
+                    <h1 class="skills-title underline">@ViewData["Title"]</h1>
 
-                @foreach (var item in Model)
-                {
-                    <dl class="skills-list">
-                        <dt >@item.Azienda</dt>
-                        <dt>da @item.DataInizio a @item.DataFine</dt>
-                        
-                    </dl>
-                }
+                    @foreach (var item in Model)
+                    {
+                        <dl class="skills-list">
+                            <dt>@item.Azienda</dt>
+                            <dt>da @item.DataInizio a @item.DataFine</dt>
+
+                        </dl>
+                    }
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <h1>No skills registered</h1>
+    <p>Do you want to add a @ViewData["Title"]? click  <p>You already have an account? click here to <a class="nav-link text-dark text-decoration-underline" asp-area="" asp-controller="Admin" asp-action="AddWork">Here</a> </p></p>
+}

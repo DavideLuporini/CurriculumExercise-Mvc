@@ -107,5 +107,15 @@ namespace CurriculumExercise.Models
             UserLogged = null;
         }
 
+        public static bool AddNewUser(User u)
+        {
+            var a = Utenti.FirstOrDefault(x => x.UserName == u.UserName);
+            if (a == null) {
+                Utenti.Add(u);
+                return true;
+            }
+            return false;
+        }
+
     }
 }
