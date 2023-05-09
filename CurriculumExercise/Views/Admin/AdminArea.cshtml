@@ -1,10 +1,18 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Admin Area";
+}
+<head>
+    <link rel="stylesheet" href="/css/Admin/AdminArea.css">
+</head>
 
 <div class="row">
-    <div class="col-md-6">
-        <a href="@Url.Action("AddSkill", "Admin")" class="btn btn-primary">Add Skill</a>
+    <h1>@ViewData["Title"]</h1>
+    <h2>Insert a new Skill</h2>
+    <div class="col-md-12 d-flex justify-content-center">
+        <a href="@Url.Action("AddSkill", "Admin")" class="btn btn-primary btn-add">Add Skill</a>
     </div>
-    <div class="col-md-6">
-        <a href="@Url.Action("AddWork", "Admin")" class="btn btn-primary">Add Work</a>
+    <h2>Insert a new Work</h2>
+    <div class="col-md-12 d-flex justify-content-center">
+        <a href="@Url.Action("AddWork", "Admin")" class="btn btn-primary btn-add">Add Work</a>
     </div>
 </div>

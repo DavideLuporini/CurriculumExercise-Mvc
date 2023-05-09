@@ -1,4 +1,5 @@
-﻿using CurriculumExercise.Models;
+﻿using CurriculumExercise.Filter;
+using CurriculumExercise.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -12,21 +13,22 @@ namespace CurriculumExercise.Controllers
         {
             _logger = logger;
         }
-
+        [AuthorizationFilter]
         public IActionResult Index()
         {
-            Utente utente = Db.GetUtente();
+            User utente = Db.GetUtente();
             return View(utente);
         }
-
+        [AuthorizationFilter]
         public IActionResult Skills()
         {
             List<Skill> skills = Db.GetAllSkils();
             return View(skills);
         }
+        [AuthorizationFilter]
         public IActionResult Works()
         {
-            List<Lavoro> works = Db.GetAllWorks();
+            List<Work> works = Db.GetAllWorks();
             return View(works);
         }
 

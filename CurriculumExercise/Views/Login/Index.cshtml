@@ -1,5 +1,8 @@
-﻿@model Utente
-
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+<h1>@ViewData["Title"]</h1>
 @using (Html.BeginForm())
 {
 
@@ -13,7 +16,7 @@
     <div>
         @Html.LabelFor(model=>model.Password)
         <div>
-            @Html.EditorFor(model => model.Password)
+            @Html.EditorFor(model => model.Password ,new { htmlAttributes = new { type = "password" }})
         </div>
     </div>
     <input type="submit" value="Login" formaction="@Url.Action("Login" , "Login")" formmethod="post" />

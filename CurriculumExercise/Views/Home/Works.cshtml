@@ -1,10 +1,13 @@
-﻿@model List<Lavoro>
+﻿@model List<Work>
+@{
+    ViewData["Title"] = "Works";
+}
 
 <div class="container-fluid" id="skills">
     <div class="row">
         <div class="col-lg-12">
             <div class="skills-text">
-                <h1 class="skills-title underline">SKILLS</h1>
+                <h1 class="skills-title underline">@ViewData["Title"]</h1>
 
                 @foreach (var item in Model)
                 {

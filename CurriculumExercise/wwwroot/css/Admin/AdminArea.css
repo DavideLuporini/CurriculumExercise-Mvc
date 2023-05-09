@@ -1,0 +1,16 @@
+﻿body {
+}
+
+h2{
+    font-size : 25px;
+    text-transform: uppercase;
+    padding-top:30px !important;
+    text-align:center
+}
+
+.btn-add {
+    border-radius: 25px;
+    border: 1px solid black;
+    width:  150px;
+    text-align: center;
+}

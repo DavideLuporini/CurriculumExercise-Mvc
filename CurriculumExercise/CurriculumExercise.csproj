@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\Skills.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\js\Skills.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
   </ItemGroup>
 

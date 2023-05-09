@@ -1,15 +1,16 @@
 ﻿@model Skill
+@{
+    ViewData["Title"] = "Add SKill";
+}
 
-<script>
-    const form = document.getElementById("myForm");
-    const element = document.getElementById("textbox");
-    form.addEventListener("submit", (event) => {
-        event.preventDefault(); // prevent default form submission
-        element.innerText = "";
-        form.reset(); // reset form values
-    });
-</script>
-<h1>Add Skill</h1>
+<head>
+    <link rel="stylesheet" href="/css/Home/AddSkill.css">
+</head>
+
+
+
+
+<h1>@ViewData["Title"]</h1>
 @using (Html.BeginForm("AddSkill", "Admin", FormMethod.Post, new { id = "myForm" }))
 {
     <div class="form-group">

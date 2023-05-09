@@ -19,20 +19,27 @@ namespace CurriculumExercise.Controllers
 
 
         [HttpPost]
-        public IActionResult Login(Utente u)
+        public IActionResult Login(User u)
         {
             var log = Db.VerifyUtente(u);
             if (log != null)
             {
                 HttpContext.Session.SetString("LogSession", log);
-                HttpContext.Session.SetInt32("IsAuthenticated", 1);
             }
             else
             {
                 HttpContext.Session.Remove("LogSession");
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Index" , "Admin");
+            return RedirectToAction("AdminArea" , "Admin");
+        }
+
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.Connection.RequestClose();
+            Db.LogginOut();
+            return RedirectToAction("Index");
         }
     }
 }

@@ -1,14 +1,9 @@
-﻿@model Lavoro
+﻿@model Work
+@{
+    ViewData["Title"] = "Add Work";
+}
 
-<script>
-    const form = document.getElementById("myForm");
-    const azienda = document.getElementById("azienda");
-    form.addEventListener("submit", (event) => {
-        event.preventDefault(); // prevent default form submission
-        azienda.innerText = "";
-        form.reset(); // reset form values
-    });
-</script>
+    <h1>@ViewData["Title"]</h1>
 @using (Html.BeginForm("AddWork", "Admin", FormMethod.Post, new { id = "myForm" }))
 {
     <div class="form-group">
@@ -24,5 +19,16 @@
         <input type="date" class="form-control" id="dataFine" name="dataFine" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button  type="submit" class="btn btn-primary">Save</button>
 }
+
+
+
+<script>
+    const form = document.getElementById("myForm");
+    const azienda = document.getElementById("azienda");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault(); // prevent default form submission
+        form.reset(); // reset form values
+    });
+</script>

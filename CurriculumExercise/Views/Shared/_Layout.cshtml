@@ -20,31 +20,39 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Works">Works</a>
-                        </li>
-                        @if (ViewContext.HttpContext.Session.GetInt32("IsAuthenticated") == 1)
-                        {
+                    <div>
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Skills">Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Works">Works</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AdminArea">Admin Area</a>
                             </li>
-                            
-                        }else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Admin Login</a>
-                            </li>
+                        </ul>
+                    </div>
 
-                        }
 
-                    </ul>
+                    @if (ViewContext.HttpContext.Session.GetString("LogSession") != null)
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="LogOut">LOG OUT</a>
+
+                    }
+
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Admin Login</a>
+                    }
+
+
+
+
+
                 </div>
             </div>
         </nav>
