@@ -16,10 +16,14 @@ namespace CurriculumExercise.Controllers
             return View();
         }
 
+        
         public IActionResult Subscription(User u)
         {
-            Db.AddNewUser(u);
-            if (Db.AddNewUser(u)) return RedirectToAction("Index", "Login");
+            if (Db.AddNewUser(u))
+            {
+                Db.AddNewUser(u);
+                return RedirectToAction("Index", "Login");
+            }
             return RedirectToAction("SubscriptionError", "Subscription");
 
         }
